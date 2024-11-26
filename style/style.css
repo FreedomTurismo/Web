@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-image: url('/release/header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+nav .logo h1 {
+    font-size: 2rem;
+    color: #ff6f61;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero {
+    z-index: 2;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 4rem;
+    animation: fadeInDown 2s ease-in-out;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 2rem;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 25px;
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #ff3f3f;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-destinos, .section-paquetes, .section-testimonios {
+    padding: 60px 20px;
+    text-align: center;
+    background-image: url('/release/seccion-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #000000;
+}
+
+/* Estilos generales para que las secciones ocupen todo el ancho */
+.section-wrapper {
+    width: 100%;
+    padding: 60px 20px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 1200px; /* Limitar el ancho máximo en pantallas grandes */
+}
+
+/* Estilos adicionales para el título de cada sección */
+.section-wrapper h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Responsividad: Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .section-wrapper h2 {
+        font-size: 2rem;
+    }
+
+    .destinos-container, .paquetes-container, .testimonios-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destino-card, .paquete-card, .testimonial-card {
+        width: 90%; /* Aumentar el ancho en pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+    }
+
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+.destinos-container, .paquetes-container, .testimonios-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.destino-card, .paquete-card, .testimonial-card {
+    background-color: rgba(236, 212, 212, 0.9);
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.destino-card:hover, .paquete-card:hover, .testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.destino-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Paquetes Turísticos - Añadir estilo a las imágenes */
+.paquete-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.paquete-card {
+    position: relative;
+    overflow: hidden; /* Evita que el contenido sobresalga del contenedor */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.details {
+    padding: 16px;
+}
+.blue-badge {
+    background-color: #007bff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+}
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 8px;
+}
+.includes {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555;
+}
+.price {
+    color: #28a745;
+    font-size: 24px;
+    margin-top: 16px;
+    font-weight: bold;
+}
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+}
+.savings {
+    color: #007bff;
+    font-size: 14px;
+}
+.taxes {
+    color: #888;
+    font-size: 12px;
+}
+
+.ver-mas-btn {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mas-btn:hover {
+    background-color: #ff3f3f;
+}
+
+/* Testimonios - Estilo para los avatares circulares */
+/* Estilo para centrar el avatar en la tarjeta del testimonio */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: rgba(236, 212, 212, 0.9);
+}
+
+/* Estilo para el avatar circular */
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adaptación de la disposición en dispositivos pequeños */
+@media (max-width: 768px) {
+    .paquete-card, .testimonial-card {
+        width: 90%; /* Adaptar el ancho */
+    }
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.legal-info {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.legal-info p {
+    margin: 5px 0;
+}
+
+
+.socialcontainer {
+    height: 80px;
+    overflow: hidden;
+}
+
+.social-login-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    -webkit-box-reflect: below 5px linear-gradient(transparent, #00000055);
+}
+
+.social-login-icons svg {
+    width: 40px;
+    fill: white;
+    transition: fill 0.3s ease-in-out;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin: 20px 0 0px 0;
+}
+
+.icon:hover svg {
+    fill: #ff6f61;
+}
+
+.social-icon-1 { 
+    background: linear-gradient(45deg, #54a1ff, #3d5eab); 
+}
+
+.social-icon-2 { 
+    background: linear-gradient(45deg, #fa8e40, #ff6f61); 
+}
+
+.social-icon-3 { 
+    background: linear-gradient(45deg, #2db3f9, #0da7d4); 
+}
+
+.social-icon-4 { 
+    background: linear-gradient(45deg, #00c473, #4cd055); 
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 25%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-body h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.modal-body p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.modal-body .btn {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff6f61;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.modal-body .btn:hover {
+    background-color: #ff3f3f;
+}
